@@ -19,10 +19,31 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <nav className="block w-full max-w-screen-lg px-4 py-2 mx-auto bg-white bg-opacity-90 sticky top-3 shadow lg:px-8 lg:py-3 backdrop-blur-lg backdrop-saturate-150 z-[9999]">
+          <div className="container flex flex-wrap items-center justify-between mx-auto text-slate-800">
+            <div>
+              <ul className="flex gap-2 mt-2 mb-4 lg:mb-0 lg:mt-0 lg:items-center lg:gap-6">
+                <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+                  <a href="/reclamos" className="flex items-center">
+                    Reclamos
+                  </a>
+                </li>
+                <li className="flex items-center p-1 text-sm gap-x-2 text-slate-600">
+                  <a href="/ordenes" className="flex items-center">
+                    Ordenes
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        {children}
+      </body>
     </html>
   );
 }
