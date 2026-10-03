@@ -1,5 +1,7 @@
+import { getReclamos, reclamos } from '@/lib/reclamos'
 import Link from 'next/link'
 import React from 'react'
+import ReclamosCard from '../components/ReclamosCard';
 
 export default function page() {
 
@@ -17,31 +19,10 @@ export default function page() {
           </Link>
         </div>
 
-        {/* Seccion que muestre mis notas */}
-        <section className='w-full h-64 my-8 p-6 rounded-lg flex flex-col bg-zinc-800 text-white justify-between'>
-          <div>
-            <h1 className='font-semibold text-lg'>Electricidad</h1>
-            <p>Listas de reclamos de Electricidad</p>
-          </div>
-          <Link href={"/reclamos/1"} className='self- text-sm text-blue-500 hover:underline'>Ver Reclamo</Link>
-        </section>
+        {reclamos.map((reclamo, key) => (
+          <ReclamosCard key={key} reclamo={reclamo} />
 
-        <section className='w-full h-64 my-8 p-6 rounded-lg flex flex-col bg-zinc-800 text-white justify-between'>
-          <div>
-            <h1 className='font-semibold text-lg'>Agua</h1>
-            <p>Listas de reclamos de Agua</p>
-          </div>
-          <Link href={"/reclamos/2"} className='self- text-sm text-blue-500 hover:underline'>Ver Reclamo</Link>
-        </section>
-
-        <section className='w-full h-64 my-8 p-6 rounded-lg flex flex-col bg-zinc-800 text-white justify-between'>
-          <div>
-            <h1 className='font-semibold text-lg'>Cloacas</h1>
-            <p>Reclamos de Cloacas</p>
-          </div>
-          <Link href={"/reclamos/3"} className='self- text-sm text-blue-500 hover:underline'>Ver Reclamo</Link>
-        </section>
-
+        ))}
       </main>
     </div>
   )
