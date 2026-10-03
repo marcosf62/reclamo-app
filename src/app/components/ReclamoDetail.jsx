@@ -7,9 +7,6 @@ export default function ReclamoDetail({ reclamo }) {
     (tipo) => tipo.id === reclamo.tipo_servicio_id
   );
 
-  console.log("Reclamo recibido:", reclamo);
-  console.log("Tipo:", reclamo?.tipo);
-
   return (
     <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
       <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">

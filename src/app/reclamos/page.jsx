@@ -1,11 +1,11 @@
-import { getReclamos, reclamos } from '@/lib/reclamos'
+import { getReclamos} from '@/lib/reclamos'
 import Link from 'next/link'
 import React from 'react'
 import ReclamosCard from '../components/ReclamosCard';
 
 export default function page() {
 
-  // funcion fetch notas => me trae un array de notas [{id: 1, title: "Nota 1", content: "Contenido de la nota 1"}, {id: 2, title: "Nota 2", content: "Contenido de la nota 2"}]
+  const reclamos = getReclamos();
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
