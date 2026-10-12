@@ -1,11 +1,12 @@
-import { getReclamos} from '@/lib/reclamos'
+"use client"
+import {useReclamos} from "./ReclamosContext";
 import Link from 'next/link'
 import React from 'react'
 import ReclamosCard from '../components/ReclamosCard';
 
-export default function page() {
+export default function Page() {
 
-  const reclamos = getReclamos();
+  const {reclamos} = useReclamos()
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">

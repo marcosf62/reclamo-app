@@ -1,10 +1,12 @@
-import Link from "next/link";
+"use client"
 import Aside from "@/app/components/Aside";
-import { getTiposServicios } from "@/lib/reclamos";
+import { useReclamos, ReclamosProvider } from "./ReclamosContext";  
 
-export default function ReclamosLayout({ children }) {
 
-  const tipos = getTiposServicios();
+
+function LayoutContent ({ children }) {
+  const {getDynamicTiposServicios} = useReclamos();
+  const tipos = getDynamicTiposServicios();
 
   return (
     <div className="flex flex-1 bg-zinc-900">
@@ -13,3 +15,12 @@ export default function ReclamosLayout({ children }) {
     </div>
   )
 }
+
+export default function ReaclamosLayout({ children }) {
+  return (
+    <ReclamosProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </ReclamosProvider>
+  )
+}
+
